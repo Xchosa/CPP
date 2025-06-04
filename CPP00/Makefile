@@ -32,4 +32,5 @@ fclean: clean
 
 re: fclean all
 
+# do not search for this files
 .PHONY: all clean fclean re
