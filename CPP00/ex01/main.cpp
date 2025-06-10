@@ -1,11 +1,20 @@
 
 
+#include <cstdio>
+#include <cstdlib>
+#include <exception>
+#include <iostream>
+#include <regex>
+#include <string>
 
-#include PHONEBOOK_HPP
+#include "Contact.hpp"
+#include "Phonebook.hpp"
+
+void	checkCinEof();
 
 int main(int argc, char **argv)
 {
-	PhoneBook	phonebook;
+	phonebook	phonebook;
 	std::string	UserInput; // input saved in Userinput
 
 	(void)argv;
@@ -14,31 +23,32 @@ int main(int argc, char **argv)
 
 	if(argc != 1)
 	{
-		std::cout << "							  /n" << ;
-		std::cout << "Welcome to Paul's Phonebook /n" << ;
+		std::cout << "							  /n" << std::endl;
+		std::cout << "Welcome to Paul's Phonebook /n" << std::endl;
 		std::cout << "							    " << std::endl;
 	}
 	while(1)
 	{
-		std::cout << "Type \"ADD\" to add a new User \n" <<;
-		std::cout << "Type \"SEARCH\" to search for an existing User \n" <<;
+		std::cout << "Type \"ADD\" to add a new User \n" <<std::endl;
+		std::cout << "Type \"SEARCH\" to search for an existing User \n" << std::endl;
 		std::cout << "Type \"EXIT\" to exit the Paul's Phonebook, but be aware! All Data will be lost \n" << std::endl;
-		std::getline(std::cin, UserInput)
-		checkCinEof()
+		std::getline(std::cin, UserInput);
+		checkCinEof();
 
-		else if(UserInput == "ADD")
+		if(UserInput == "ADD")
 		{
-			phonebook.add_contact();
+			const Contact new_contact = Contact::create_contact();
+			phonebook.add_contact(new_contact);
 		}
-		else if(UserInput == "SEARCH")
-		{
-			phoneebook.search_contact();
-		}
+		// else if(UserInput == "SEARCH")
+		// {
+		// 	phonebook.search_contact(display_contact());
+		// }
 		else if(UserInput == "Exit"){
-			return(0)
+			return(0);
 		}
 		else {
-			std::cout << "Wrong Command, only \"ADD" , \"SEARCH\" and \"EXIT\" are valid" << std::endl;
+			std::cout << "Wrong Command, only \"ADD\" , \"SEARCH\" and \"EXIT\" are valid" << std::endl;
 		}
 	}
 

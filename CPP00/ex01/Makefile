@@ -8,7 +8,10 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 TARGET = PhoneBook
 
 # Source files
-SRCS = phonebook.cpp
+SRCS =	main.cpp \
+		Phonebook.cpp \
+		Contact.cpp
+
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
