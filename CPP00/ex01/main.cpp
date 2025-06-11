@@ -1,11 +1,5 @@
 
 
-#include <cstdio>
-#include <cstdlib>
-#include <exception>
-#include <iostream>
-#include <regex>
-#include <string>
 
 #include "Contact.hpp"
 #include "Phonebook.hpp"
@@ -14,7 +8,7 @@ void	checkCinEof();
 
 int main(int argc, char **argv)
 {
-	phonebook	phonebook;
+	PhoneBook	PhoneBook;
 	std::string	UserInput; // input saved in Userinput
 
 	(void)argv;
@@ -37,14 +31,15 @@ int main(int argc, char **argv)
 
 		if(UserInput == "ADD")
 		{
-			const Contact new_contact = Contact::create_contact();
-			phonebook.add_contact(new_contact);
+			Contact contact;
+			Contact new_contact = contact.create_contact();
+			PhoneBook.add_contact(new_contact);
 		}
-		// else if(UserInput == "SEARCH")
-		// {
-		// 	phonebook.search_contact(display_contact());
-		// }
-		else if(UserInput == "Exit"){
+		else if(UserInput == "SEARCH")
+		{
+			PhoneBook.search_Contact();
+		}
+		else if(UserInput == "EXIT"){
 			return(0);
 		}
 		else {

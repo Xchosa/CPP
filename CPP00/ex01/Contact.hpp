@@ -2,6 +2,8 @@
 # define CONTACT_HPP
 
 #include <string>
+#include <signal.h>
+#include <iostream>
 
 class Contact {
 private:
@@ -20,7 +22,7 @@ private:
 	//Setters
     void    set_FirstName(const std::string& f_Name);
 	void	set_LastName(const std::string& l_name);
-	void	set_Nickname(const std::string& n_name);
+	void	set_NickName(const std::string& n_name);
 	void	set_PhoneNumber(const std::string& phone_nbr);
 	void	set_DarkestSecret(const std::string& d_secret);
 
@@ -34,13 +36,15 @@ private:
 
 
 	// Encapsulation
+	
 	// 	Bundles related data and methods together in a class
 	// Controls access to that data through well-defined interfaces
 	// Hides internal implementation details
-    static Contact create_contact(); // static method declaration that belongs to Contact class
+    Contact create_contact(); // static method declaration that belongs to Contact class
+	bool only_allow_digits(const std::string& tmp_contact_data);
 
-	//Utility methods
-	bool valid_phoneNumber();
+
+
 	
 
 };
