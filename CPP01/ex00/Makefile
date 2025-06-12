@@ -5,12 +5,12 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
 # Target executable
-TARGET = PhoneBook
+TARGET = Zombie
 
 # Source files
 SRCS =	main.cpp \
-		Phonebook.cpp \
-		Contact.cpp
+		Zombie.cpp \
+
 
 
 # Object files

@@ -1,5 +1,5 @@
 
-#include <Zombie.hpp>
+#include "Zombie.hpp"
 
 
 
@@ -13,14 +13,16 @@ int main()
     std::cout << "Enter Zombie name: ";
     std::getline(std::cin, UserInput);
 
+    std::cout << "\n--- Creating heap zombie ---\n";
     zombie = newZombie(UserInput);
     zombie->announce();
 
     delete zombie; 
 
+    std::cout << "\n--- Creating stack zombie ---\n";
     randomChump(UserInput);
-    ~Zombie();
-    
+    // destructor gets called automatically
+
     return(0);
 
 }

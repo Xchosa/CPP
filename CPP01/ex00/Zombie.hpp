@@ -19,7 +19,7 @@ public:
     Zombie(std::string name);
 
     ~Zombie(){
-        std::cout << Zombie->name << std::endl;
+        std::cout << this->name << "is destroyed" << std::endl;
     };
     void announce( void ){
        std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
