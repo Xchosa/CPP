@@ -5,10 +5,11 @@ CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable
-TARGET = megaphone
+TARGET = Account
 
 # Source files
-SRCS = megaphone.cpp
+SRCS =	Account.cpp \
+		tests.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
