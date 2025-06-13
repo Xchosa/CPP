@@ -13,7 +13,8 @@ int main()
     std::cin >> UserInput_nbr;
 
 
-
+    // std::cin.ignore(10000, '\n');    // Clear input buffer
+    std::cin.ignore(1, '\n');
     std::cout << "\n--- Creating heap zombie ---\n";
 
     // Zombie *HeapZombie = newZombie(UserInput);
@@ -27,9 +28,9 @@ int main()
     std::cout << "Enter Zombie name: ";
     std::getline(std::cin, UserInput);
     Zombie* ZombieRudel = zombieHorde(UserInput_nbr, UserInput);
-    for( int i = 1; i <= UserInput_nbr; i++)
+    for( int i = 1; i <= UserInput_nbr; i++){
         ZombieRudel[i].announce();
-
+    }
     // delete entire array;
     delete [] ZombieRudel;
     return(0);

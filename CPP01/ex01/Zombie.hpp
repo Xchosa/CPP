@@ -14,16 +14,14 @@ class Zombie
 {
 private:
     std::string name;
+    static int destroyed_zombies;
 
 public:
     Zombie(std::string name);
     Zombie();  
-    ~Zombie(){
-        std::cout << this->name << ": Zombie destroyed" << std::endl;
-    };
-    void announce( void ){
-        std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
-    }
+    ~Zombie();
+    void announce( void );
+    void setName(std::string name);
 };
 
 Zombie* newZombie( std::string name );
