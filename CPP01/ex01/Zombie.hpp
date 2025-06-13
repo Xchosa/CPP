@@ -17,7 +17,7 @@ private:
 
 public:
     Zombie(std::string name);
-
+    Zombie();  
     ~Zombie(){
         std::cout << this->name << ": Zombie destroyed" << std::endl;
     };
@@ -29,6 +29,7 @@ public:
 Zombie* newZombie( std::string name );
 void randomChump( std::string name );
 Zombie* zombieHorde( int N, std::string name );
+
 
 
 

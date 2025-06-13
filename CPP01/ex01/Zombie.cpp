@@ -7,19 +7,19 @@ Zombie::Zombie(std::string name){
     this->name = name;
 }
 
-Zombie* newZombie( std::string name ){
-    Zombie* newZombie = new Zombie(name);
-    return (newZombie);
+Zombie::Zombie()
+{
+    this->name = "";
 }
 
-
-void randomChump( std::string name ){
-    Zombie diffent_zombie(name);
-    std::cout << name << ": ";
-    diffent_zombie.announce();
-};
-
-
 Zombie* zombieHorde( int N, std::string name ){
-    
+    Zombie* ZombieRudel = new Zombie[N]; 
+
+    for(int i = 1; i <= N; i++)
+    {
+        ZombieRudel[i] = Zombie(name);
+
+        std::cout << i << ": " << " created" << std::endl;
+    }
+        return(ZombieRudel);
 }
