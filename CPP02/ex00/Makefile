@@ -2,13 +2,14 @@
 CXX = c++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++11
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 # Target executable
 TARGET = main
 
 # Source files
-SRCS =	main.cpp 
+SRCS =	main.cpp \
+		Fixed.hpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)
