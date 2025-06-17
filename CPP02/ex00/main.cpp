@@ -1,5 +1,4 @@
 
-#include "Fixed.hpp"
 
 #include <iostream>
 #include <string>
@@ -8,15 +7,16 @@
 #include <cctype>
 #include <limits>
 
-#include <vector>
-#include <algorithm>
-#include <cmath> 
+// #include <vector>
+// #include <algorithm>
+// #include <cmath> 
 
+#include "Fixed.hpp"
 
 int main( ) 
 {
     Fixed a;    // 0
-    Fixed b( a );
+    Fixed b( a ); // cpy constructor + get.RawBits
     Fixed c;
     c = b;
     std::cout << a.getRawBits() << std::endl;

@@ -9,7 +9,7 @@ TARGET = main
 
 # Source files
 SRCS =	main.cpp \
-		Fixed.hpp
+		Fixed.cpp
 
 # Object files
 OBJS = $(SRCS:.cpp=.o)

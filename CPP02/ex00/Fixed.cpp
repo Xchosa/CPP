@@ -12,11 +12,12 @@ Fixed::Fixed()
 }
 
 
-// Fixed b(a)
+// Fixed b(a) // copy constructor 
 Fixed::Fixed(const Fixed& other) // pass by reference
 {
         std::cout << "Copy constructor called" << std::endl;
-        this->fp_Nbr = other.fp_Nbr; // cpy raw bits intho other object  
+        // this->fp_Nbr = other.fp_Nbr; // cpy raw bits intho other object  
+        this->fp_Nbr = other.getRawBits();
 }
 
 //Copy assignment operator called
@@ -25,7 +26,8 @@ Fixed& Fixed::operator=(const Fixed& other)
     std::cout << "Copy assignment operator called" << std::endl;
     if(this != &other)
     {
-        this->fp_Nbr = other.fp_Nbr;
+        // this->fp_Nbr = other.fp_Nbr;
+        this->fp_Nbr = other.getRawBits(); // for the exact same output
     }
     return (*this);
 }
@@ -34,16 +36,18 @@ Fixed::~Fixed(){
         std::cout << "Destructor called" << std::endl;
     };
 
-int getRawBits(void) const 
+int Fixed::getRawBits(void) const 
 {
+    std::cout << "getRawBits member function called" << std::endl;
     // returns the raw value of the fixed-point value
-    return 
-};
+    return (this->fp_Nbr);
+}
 
 
-void setRawBits(int const raw)
+void Fixed::setRawBits(int const raw)
 {
  //sets the raw value of the fixed-point number
+    this->fp_Nbr = raw;
 
 };
 

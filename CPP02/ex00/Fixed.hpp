@@ -18,18 +18,14 @@ class Fixed
 
     public:
 
-    Fixed() : fp_Nbr(fp_Nbr) {
-    };
+    Fixed();
 
-    Fixed(const Fixed& other) {
-    };
+    Fixed(const Fixed& other);
 
-    Fixed& operator=(const Fixed& other){
-    };
+    Fixed& operator=(const Fixed& other);
     //Copy assignment operator called
 
-    ~Fixed(){
-    };
+    ~Fixed();
 
     int getRawBits(void) const;
     void setRawBits(int const raw);
