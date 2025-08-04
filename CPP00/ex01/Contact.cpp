@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:33:19 by poverbec          #+#    #+#             */
-/*   Updated: 2025/08/04 09:33:25 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/08/04 10:33:13 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,14 @@ void   checkCinEof()
     }
     }
 
+std::string trim (std::string &str){
+	size_t first = str.find_first_not_of(" \t\n\r\f\v");
+	if (first == std::string::npos)
+		return "";
+	size_t last = str.find_first_not_of(" \t\n\r\f\v");
+		return str.substr(first, last - first +1 );
+}
+	
 
 // return type
     // Class scope 
@@ -65,8 +73,13 @@ Contact Contact::create_contact(){
         }
         checkCinEof();
         // if (i == 3) // limit to number and + 
-        if(tmp_contact_data[i] == "")
+        if(tmp_contact_data[i] == " ")
         {
+            std::cout << "Please provide needed informations, empty lines are not allowed" << std::endl;
+            i--;
+        }
+		if(trim(tmp_contact_data[i]).empty())
+		{
             std::cout << "Please provide needed informations, empty lines are not allowed" << std::endl;
             i--;
         }
@@ -105,6 +118,7 @@ bool Contact::only_allow_digits(const std::string& phoneNbr)
     }
     return true;
 } 
+
 // void	set_DarkestSecret(const std::string& d_secret);
 
 // Pass by const reference 
