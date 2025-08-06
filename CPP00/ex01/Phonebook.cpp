@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:34:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/08/04 09:34:29 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/08/06 17:08:56 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,17 +64,17 @@ void PhoneBook::display_Contact(int userInput)
     std::cout << std::setw(10) << "Index" << "|"
             << std:: setw(10) << "First Name" << "|"
             << std:: setw(10) << "Last Name" << "|"
-            << std:: setw(10) << "NickName" << "|";
-            // << std:: setw(10) << "Phone Nbr" << "|"
-            // << std:: setw(10) << "Darkest Secret" << "|"<< "\n" << std::endl;
+            << std:: setw(10) << "NickName" << "|"
+            << std:: setw(10) << "Phone Nbr" << "|"
+            << std:: setw(10) << "D. Secret" << "|"<< "\n"; // ADDED 
     
     std::cout << std:: right;
     std::cout << std:: setw(10) << userInput << "|";
     std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_FirstName()) << '|';
     std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_LastName()) << '|';
     std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_NickName()) << '|';
-    // std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_PhoneNumber()) << '|';
-    // std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_DarkestSecret()) << '|';
+    std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_PhoneNumber()) << '|';
+    std::cout << std:: setw(10) << ft_truncate(Contacts[userInput].get_DarkestSecret()) << '|' << std::endl;
 }
 
 
@@ -142,6 +142,7 @@ void PhoneBook::search_Contact(){
             else if(userInput >= 0 || userInput <= Contact_Index)
             {
                 display_Contact(userInput);
+				std::cin.ignore(); // ADDED 
                 return;
             }
             else 
