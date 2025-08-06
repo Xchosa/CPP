@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/04 09:34:22 by poverbec          #+#    #+#             */
-/*   Updated: 2025/08/06 17:08:56 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/08/06 17:48:14 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void PhoneBook::add_contact(const Contact& contact)
     {
         // change contact[2] to Contact[1] 
         for(int i = 0 ; i < MAX_CONTACTS -1; i++) {
-            Contacts[i] = Contacts[i -1];
+            Contacts[i] = Contacts[i + 1]; // 0 -1 undefinfed corropts data
         }
         // add new Contact at last position
         Contacts[MAX_CONTACTS -1 ] = contact;
