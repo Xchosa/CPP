@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 11:03:55 by poverbec          #+#    #+#             */
-/*   Updated: 2025/10/13 11:03:58 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/10/13 11:30:07 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class HumanB
     void setWeapon(Weapon &weapon);
     
 
-    Weapon* getWeapon();
+    //Weapon* getWeapon();
 
     void attack();
 };

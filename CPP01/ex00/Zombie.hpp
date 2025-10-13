@@ -6,7 +6,7 @@
 /*   By: poverbec <poverbec@student.42heilbronn>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 09:55:41 by poverbec          #+#    #+#             */
-/*   Updated: 2025/10/13 09:55:44 by poverbec         ###   ########.fr       */
+/*   Updated: 2025/10/13 11:18:30 by poverbec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ public:
     Zombie(std::string name);
 
     ~Zombie(){
-        std::cout << this->name << "is destroyed" << std::endl;
+        std::cout << this->name << " is destroyed " << std::endl;
     };
     void announce( void ){
        std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
