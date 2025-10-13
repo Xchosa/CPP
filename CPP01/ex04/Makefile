@@ -2,17 +2,13 @@
 CXX = c++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
 # Target executable
 TARGET = main
 
 # Source files
-SRCS =	main.cpp \
-		Weapon.cpp \
-		HumanA.cpp \
-		HumanB.cpp
-
+SRCS =	main.cpp
 
 
 # Object files
